@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saarthi Aadarsh Seva Sansthan — Serving Humanity, Transforming Lives</title>
+<meta name="description" content="Saarthi Aadarsh Seva Sansthan — A humanitarian NGO based in Bahosi, Uttar Pradesh, committed to education, healthcare, women empowerment and rural development.">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@300;400;500;600;700&family=Oswald:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://bootswatch.com/5/sandstone/bootstrap.min.css">
+<style>
+/* === ROOT VARIABLES === */
+:root{
+  --c-primary:#FF6B00;--c-gold:#D4A017;--c-surface:#FAFAF7;--c-alt:#F3EFE8;
+  --c-text:#1A1208;--c-text2:#5C4A2A;--c-green:#2D7A3A;--c-border:#E8DCC8;
+  --c-card:#FFFFFF;--c-shadow:0 4px 24px rgba(80,50,10,.08);
+  --c-shadow-hov:0 10px 36px rgba(80,50,10,.15);
+  --grad-hero:linear-gradient(135deg,rgba(255,107,0,.55),rgba(26,18,8,.65));
+  --grad-band:linear-gradient(120deg,#FF6B00,#D4A017);
+  --font-display:'Tiro Devanagari Hindi',serif;
+  --font-body:'Hind',sans-serif;
+  --font-num:'Oswald',sans-serif;
+  --font-ui:'Inter',sans-serif;
+}
+html.dark-mode{
+  --c-primary:#FF8C2A;--c-gold:#E8B84B;--c-surface:#0D0D0D;--c-alt:#161410;
+  --c-text:#F5EDD8;--c-text2:#B8A888;--c-green:#4CAF72;--c-border:#2A2318;
+  --c-card:#1E1A14;--c-shadow:0 4px 24px rgba(0,0,0,.5);
+  --c-shadow-hov:0 10px 36px rgba(0,0,0,.7);
+  --grad-hero:linear-gradient(135deg,rgba(255,140,42,.5),rgba(0,0,0,.78));
+  --grad-band:linear-gradient(120deg,#7a3500,#a76a10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--font-body);background:var(--c-surface);color:var(--c-text);
+  line-height:1.6;overflow-x:hidden;transition:background-color .3s ease,color .3s ease}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--c-text);line-height:1.25}
+section{padding:80px 0;position:relative}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:clamp(28px,3.4vw,44px);margin-bottom:12px}
+.section-title p{color:var(--c-text2);font-size:17px;max-width:680px;margin:0 auto}
+.section-title .kicker{display:inline-block;color:var(--c-primary);font-family:var(--font-ui);
+  font-weight:600;letter-spacing:2px;text-transform:uppercase;font-size:12px;margin-bottom:8px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;border-radius:50px;
+  font-family:var(--font-ui);font-weight:600;font-size:15px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;cursor:pointer;border:2px solid transparent}
+.btn-primary{background:var(--c-primary);color:#fff;box-shadow:0 6px 18px rgba(255,107,0,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(255,107,0,.55)}
+.btn-outline{border-color:#fff;color:#fff}
+.btn-outline:hover{background:#fff;color:var(--c-primary)}
+.btn-ghost{border-color:var(--c-primary);color:var(--c-primary)}
+.btn-ghost:hover{background:var(--c-primary);color:#fff}
+/* === TOP BAR === */
+.topbar{background:var(--c-primary);color:#fff;font-size:13px;padding:8px 0;font-family:var(--font-ui)}
+html.dark-mode .topbar{background:#0a0a0a;border-bottom:1px solid var(--c-border)}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.topbar a{color:#fff;margin-right:14px}
+.topbar a:hover{opacity:.8}
+.topbar .socials a{margin-left:14px;margin-right:0;font-size:15px}
+.ticker{flex:1;overflow:hidden;white-space:nowrap;margin:0 18px}
+.ticker-track{display:inline-block;padding-left:100%;animation:tick 22s linear infinite}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+@media(max-width:768px){.topbar{display:none}}
+
+/* === HEADER === */
+.header{position:sticky;top:0;z-index:1000;background:var(--c-surface);
+  border-bottom:1px solid var(--c-border);transition:all .3s ease}
+.header.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.08);padding:0}
+.header .container{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;transition:padding .3s ease}
+.header.scrolled .container{padding:8px 24px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-emblem{width:48px;height:48px;background:linear-gradient(135deg,var(--c-primary),var(--c-gold));
+  border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;
+  font-family:var(--font-display);font-size:28px;font-weight:700;box-shadow:0 4px 12px rgba(255,107,0,.35)}
+.logo-text{display:flex;flex-direction:column;line-height:1.1}
+.logo-text .name{font-family:var(--font-display);font-size:18px;color:var(--c-text);font-weight:700}
+.logo-text .tag{font-size:11px;color:var(--c-text2);font-family:var(--font-ui)}
+.nav{display:flex;align-items:center;gap:6px}
+.nav-item{position:relative}
+.nav-item>a{padding:10px 14px;font-family:var(--font-ui);font-weight:500;font-size:14px;
+  color:var(--c-text);display:inline-flex;align-items:center;gap:5px;border-radius:8px;transition:all .2s}
+.nav-item>a:hover{color:var(--c-primary);background:var(--c-alt)}
+.dropdown{position:absolute;top:100%;left:0;background:var(--c-card);min-width:220px;
+  border-radius:10px;box-shadow:var(--c-shadow-hov);padding:8px;opacity:0;visibility:hidden;
+  transform:translateY(8px);transition:all .25s ease;border:1px solid var(--c-border)}
+.nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown a{display:block;padding:10px 14px;font-size:14px;color:var(--c-text);border-radius:6px;font-family:var(--font-ui)}
+.dropdown a:hover{background:var(--c-alt);color:var(--c-primary);padding-left:18px}
+.header-actions{display:flex;align-items:center;gap:10px}
+.lang-toggle{display:flex;border:1.5px solid var(--c-border);border-radius:30px;overflow:hidden;font-family:var(--font-ui);font-size:12px;font-weight:600}
+.lang-toggle button{padding:6px 12px;color:var(--c-text2);transition:all .2s}
+.lang-toggle button.active{background:var(--c-primary);color:#fff}
+.theme-toggle{width:38px;height:38px;border-radius:50%;background:var(--c-alt);
+  display:flex;align-items:center;justify-content:center;color:var(--c-primary);transition:all .25s}
+.theme-toggle:hover{transform:rotate(20deg);background:var(--c-primary);color:#fff}
+.hamburger{display:none;width:42px;height:42px;border-radius:8px;background:var(--c-alt);
+  color:var(--c-text);font-size:20px;align-items:center;justify-content:center}
+@media(max-width:1024px){.nav{display:none}.hamburger{display:flex}}
+@media(max-width:600px){.logo-text .name{font-size:15px}.logo-text .tag{display:none}.logo-emblem{width:42px;height:42px;font-size:24px}}
+
+/* mobile overlay menu */
+.mobile-menu{position:fixed;inset:0;background:var(--c-surface);z-index:2000;
+  transform:translateX(-100%);transition:transform .35s ease;display:flex;flex-direction:column;padding:24px}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu .mm-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.mobile-menu .mm-close{width:42px;height:42px;border-radius:50%;background:var(--c-alt);font-size:20px;color:var(--c-text)}
+.mobile-menu nav{flex:1;overflow-y:auto}
+.mobile-menu nav>div{border-bottom:1px solid var(--c-border);padding:14px 0;font-family:var(--font-ui)}
+.mobile-menu nav>div>a{font-weight:600;font-size:17px;color:var(--c-text);display:block;padding:6px 0}
+.mobile-menu nav>div .submenu a{display:block;padding:8px 14px;color:var(--c-text2);font-size:14px}
+.mobile-menu .mm-actions{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:20px 0;border-top:1px solid var(--c-border)}
+
+/* === HERO === */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
+  background-image:url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=1920&q=80');
+  background-size:cover;background-position:center;background-attachment:fixed;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:var(--grad-hero)}
+.hero .container{position:relative;z-index:2;color:#fff;padding:120px 24px}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  color:#fff;padding:8px 18px;border-radius:30px;font-family:var(--font-ui);font-size:12px;
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;backdrop-filter:none}
+.hero h1{font-family:var(--font-display);font-size:clamp(36px,6vw,76px);color:#fff;line-height:1.1;margin-bottom:18px}
+.hero h1 .word{display:inline-block;opacity:0;transform:translateY(30px);animation:wordIn .7s forwards}
+@keyframes wordIn{to{opacity:1;transform:translateY(0)}}
+.hero p.sub{font-size:clamp(16px,2vw,22px);color:rgba(255,255,255,.92);max-width:720px;margin:0 auto 32px;font-style:italic}
+.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.scroll-down{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:#fff;font-size:24px;z-index:2;
+  animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+@media(max-width:768px){.hero{background-attachment:scroll;min-height:90vh}}
+
+/* === STATS === */
+.stats{background:var(--grad-band);color:#fff;padding:60px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stat-card{text-align:center;padding:20px}
+.stat-card i{font-size:34px;margin-bottom:10px;opacity:.9}
+.stat-num{font-family:var(--font-num);font-size:clamp(40px,5vw,60px);font-weight:700;line-height:1}
+.stat-label{font-family:var(--font-ui);font-size:14px;opacity:.95;margin-top:6px}
+@media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* === ABOUT === */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-img{position:relative;border-radius:16px;overflow:hidden;box-shadow:var(--c-shadow-hov)}
+.about-img img{width:100%;height:480px;object-fit:cover;transition:transform .6s}
+.about-img:hover img{transform:scale(1.06)}
+.about-img .badge{position:absolute;bottom:24px;left:24px;background:var(--c-primary);color:#fff;padding:14px 22px;border-radius:12px;font-family:var(--font-ui);font-weight:600}
+.about-text h2{font-size:clamp(28px,3.4vw,42px);margin-bottom:18px}
+.about-text .quote{border-left:4px solid var(--c-primary);padding:6px 0 6px 18px;font-style:italic;color:var(--c-text2);margin:18px 0}
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.mv-card{background:var(--c-alt);padding:18px;border-radius:12px;border-top:3px solid var(--c-primary)}
+.mv-card h4{font-size:16px;color:var(--c-primary);margin-bottom:8px;font-family:var(--font-ui);font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.mv-card p{font-size:14px;color:var(--c-text2)}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:30px}.about-img img{height:340px}.mv-grid{grid-template-columns:1fr}}
+
+/* === OBJECTIVES === */
+.obj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.obj-card{background:var(--c-card);padding:32px 26px;border-radius:14px;border-top:3px solid transparent;
+  box-shadow:var(--c-shadow);transition:all .3s ease;border:1px solid var(--c-border)}
+.obj-card:hover{transform:translateY(-6px);box-shadow:var(--c-shadow-hov);border-top-color:var(--c-primary)}
+.obj-icon{width:60px;height:60px;border-radius:14px;background:linear-gradient(135deg,var(--c-primary),var(--c-gold));
+  color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px}
+.obj-card h3{font-size:20px;margin-bottom:10px;font-family:var(--font-display)}
+.obj-card p{color:var(--c-text2);font-size:15px}
+@media(max-width:900px){.obj-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.obj-grid{grid-template-columns:1fr}}
+
+/* === PROJECTS === */
+section.projects{background:var(--c-alt)}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.proj-card{background:var(--c-card);border-radius:16px;overflow:hidden;box-shadow:var(--c-shadow);
+  transition:all .35s ease;position:relative;border:1px solid var(--c-border)}
+.proj-card:hover{transform:translateY(-8px);box-shadow:var(--c-shadow-hov)}
+.proj-img{height:230px;overflow:hidden;position:relative}
+.proj-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.proj-card:hover .proj-img img{transform:scale(1.1)}
+.proj-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(255,107,0,.92));
+  display:flex;align-items:flex-end;justify-content:center;padding:20px;opacity:0;transition:opacity .35s}
+.proj-card:hover .proj-overlay{opacity:1}
+.proj-overlay .btn{background:#fff;color:var(--c-primary);padding:10px 20px;font-size:13px}
+.proj-body{padding:22px}
+.proj-tags{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.proj-tag{background:var(--c-alt);color:var(--c-primary);font-family:var(--font-ui);font-size:11px;
+  padding:4px 10px;border-radius:20px;font-weight:600;letter-spacing:.5px;text-transform:uppercase}
+.proj-tag.green{background:rgba(45,122,58,.12);color:var(--c-green)}
+.proj-body h3{font-size:19px;margin-bottom:8px}
+.proj-body p{color:var(--c-text2);font-size:14.5px}
+@media(max-width:900px){.proj-grid{grid-template-columns:1fr}}
+
+/* === TEAM === */
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.team-card{background:var(--c-card);border-radius:16px;padding:28px;display:flex;gap:22px;align-items:flex-start;
+  box-shadow:var(--c-shadow);border:1px solid var(--c-border);transition:all .3s}
+.team-card:hover{transform:translateY(-4px);box-shadow:var(--c-shadow-hov)}
+.team-card.founder{grid-column:1/-1;background:linear-gradient(135deg,var(--c-card),var(--c-alt));border-left:5px solid var(--c-primary)}
+.avatar{flex-shrink:0;width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,var(--c-primary),var(--c-gold));
+  color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:32px;font-weight:700;box-shadow:0 4px 14px rgba(255,107,0,.3)}
+.team-card.founder .avatar{width:120px;height:120px;font-size:42px}
+.team-info h3{font-size:21px;margin-bottom:4px}
+.role-badge{display:inline-block;background:var(--c-alt);color:var(--c-primary);font-family:var(--font-ui);
+  font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;margin-bottom:10px;letter-spacing:.5px}
+.team-info p{font-size:14.5px;color:var(--c-text2)}
+@media(max-width:760px){.team-grid{grid-template-columns:1fr}.team-card{flex-direction:column;text-align:center}.avatar{margin:0 auto}}
+
+/* === STORIES (Swiper) === */
+section.stories{background:var(--c-alt)}
+.story-slide{background:var(--c-card);padding:50px 40px;border-radius:18px;text-align:center;
+  border:1px solid var(--c-border);box-shadow:var(--c-shadow);max-width:820px;margin:0 auto}
+.story-slide .quote-i{font-size:48px;color:var(--c-primary);opacity:.3;margin-bottom:14px}
+.story-slide p{font-size:19px;font-style:italic;color:var(--c-text);line-height:1.55;margin-bottom:24px}
+.story-meta{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:18px}
+.story-meta .avatar{width:54px;height:54px;font-size:20px}
+.story-meta .name{font-weight:700;font-family:var(--font-ui)}
+.story-meta .loc{font-size:13px;color:var(--c-text2)}
+.swiper-pagination-bullet-active{background:var(--c-primary)!important}
+@media(max-width:600px){.story-slide{padding:32px 22px}.story-slide p{font-size:16px}}
+
+/* === TESTIMONIALS === */
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.test-card{background:var(--c-card);padding:28px;border-radius:14px;border:1px solid var(--c-border);
+  box-shadow:var(--c-shadow);position:relative;transition:all .3s}
+.test-card:hover{transform:translateY(-4px);box-shadow:var(--c-shadow-hov)}
+.test-card .stars{color:#FFB400;margin-bottom:10px}
+.test-card p{font-size:15px;color:var(--c-text);margin-bottom:18px;font-style:italic}
+.test-card .meta{display:flex;align-items:center;gap:12px;border-top:1px solid var(--c-border);padding-top:14px}
+.test-card .avatar{width:46px;height:46px;font-size:18px}
+.test-card .meta strong{display:block;font-family:var(--font-ui);font-size:14px}
+.test-card .meta span{font-size:12px;color:var(--c-text2)}
+@media(max-width:900px){.test-grid{grid-template-columns:1fr}}
+
+/* === DONATE === */
+section.donate{background:var(--grad-band);color:#fff;padding:80px 0}
+section.donate .container{position:relative;z-index:2}
+.donate h2{color:#fff;text-align:center;font-size:clamp(28px,3.6vw,44px)}
+.donate .sub{text-align:center;color:rgba(255,255,255,.92);max-width:760px;margin:14px auto 36px;font-size:16px}
+.impact-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:50px}
+.impact-card{background:rgba(255,255,255,.13);padding:22px;border-radius:14px;text-align:center;
+  border:1px solid rgba(255,255,255,.2);transition:transform .3s}
+.impact-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.2)}
+.impact-card .ic{font-size:30px;margin-bottom:8px}
+.impact-card strong{display:block;font-family:var(--font-num);font-size:24px;margin-bottom:4px}
+.impact-card span{font-size:13px;opacity:.9}
+.donate-box{background:#fff;color:var(--c-text);max-width:780px;margin:0 auto;border-radius:18px;
+  padding:36px;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+html.dark-mode .donate-box{background:var(--c-card);color:var(--c-text)}
+.amount-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:16px 0 22px}
+.amt-pill{padding:11px 22px;border-radius:30px;border:2px solid var(--c-border);background:transparent;
+  font-family:var(--font-ui);font-weight:600;color:var(--c-text);transition:all .2s}
+.amt-pill:hover{border-color:var(--c-primary)}
+.amt-pill.active{background:var(--c-primary);color:#fff;border-color:var(--c-primary)}
+#customAmtBox{display:none;margin:0 auto 18px;max-width:300px}
+#customAmtBox input,.donate-box input[type=text]{width:100%;padding:13px 16px;border:1.5px solid var(--c-border);
+  border-radius:10px;font-family:var(--font-ui);font-size:15px;background:var(--c-surface);color:var(--c-text);margin-bottom:14px}
+.donate-box input:focus{outline:none;border-color:var(--c-primary)}
+.donate-cta{display:block;width:100%;padding:16px;background:var(--c-primary);color:#fff;border-radius:30px;
+  font-family:var(--font-ui);font-weight:700;font-size:17px;letter-spacing:.5px;
+  box-shadow:0 8px 20px rgba(255,107,0,.45);animation:pulse 2.5s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 8px 20px rgba(255,107,0,.45)}50%{box-shadow:0 8px 30px rgba(255,107,0,.7)}}
+.trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:22px;color:var(--c-text2);font-size:13px;font-family:var(--font-ui)}
+.trust-row span{display:inline-flex;align-items:center;gap:6px}
+@media(max-width:900px){.impact-row{grid-template-columns:repeat(2,1fr)}.donate-box{padding:24px}}
+
+/* === GALLERY === */
+.gallery-tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.gtab{padding:8px 18px;border-radius:30px;background:var(--c-alt);font-family:var(--font-ui);font-weight:500;font-size:13px;color:var(--c-text2)}
+.gtab.active,.gtab:hover{background:var(--c-primary);color:#fff}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;grid-auto-rows:200px}
+.gimg{position:relative;overflow:hidden;border-radius:12px;cursor:pointer}
+.gimg img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gimg:hover img{transform:scale(1.12)}
+.gimg .overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(255,107,0,.85));
+  display:flex;align-items:flex-end;padding:14px;color:#fff;opacity:0;transition:opacity .3s;font-family:var(--font-ui);font-weight:600}
+.gimg:hover .overlay{opacity:1}
+.gimg.tall{grid-row:span 2}
+@media(max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.gallery-grid{grid-template-columns:1fr;grid-auto-rows:240px}.gimg.tall{grid-row:span 1}}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:3000;display:none;align-items:center;justify-content:center;padding:20px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90%;max-height:90vh;border-radius:8px}
+.lightbox .lb-close{position:absolute;top:20px;right:20px;color:#fff;font-size:30px;cursor:pointer}
+
+/* === CONTACT === */
+section.contact{background:var(--c-alt)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.contact-card{background:var(--c-card);padding:30px;border-radius:14px;box-shadow:var(--c-shadow);border:1px solid var(--c-border)}
+.contact-card h3{font-size:22px;margin-bottom:18px}
+.contact-list li{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px dashed var(--c-border);list-style:none}
+.contact-list li:last-child{border-bottom:none}
+.contact-list .ic{width:42px;height:42px;border-radius:10px;background:var(--c-alt);color:var(--c-primary);
+  display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.contact-list strong{display:block;font-family:var(--font-ui);font-size:13px;color:var(--c-text2);margin-bottom:2px}
+.contact-list p{color:var(--c-text);font-size:15px}
+.contact-form{background:var(--c-card);padding:30px;border-radius:14px;border:1px solid var(--c-border);box-shadow:var(--c-shadow)}
+.contact-form h3{font-size:22px;margin-bottom:18px}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:13px 14px;
+  border:1.5px solid var(--c-border);border-radius:10px;background:var(--c-surface);color:var(--c-text);
+  font-family:var(--font-ui);font-size:14px;margin-bottom:14px}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{outline:none;border-color:var(--c-primary)}
+.contact-form textarea{min-height:120px;resize:vertical}
+.contact-form button{width:100%}
+.map-wrap{border-radius:14px;overflow:hidden;height:280px;margin-top:18px;border:1px solid var(--c-border)}
+.map-wrap iframe{width:100%;height:100%;border:0}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}.cf-row{grid-template-columns:1fr}}
+
+/* === NEWSLETTER === */
+.newsletter{background:linear-gradient(120deg,var(--c-text),#2a1e10);color:#fff;padding:50px 0}
+html.dark-mode .newsletter{background:linear-gradient(120deg,#1a1208,#000)}
+.news-row{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.news-row h3{color:#fff;font-size:24px;margin-bottom:6px}
+.news-row p{color:rgba(255,255,255,.8);font-size:14px}
+.news-form{display:flex;gap:10px}
+.news-form input{flex:1;padding:13px 18px;border-radius:30px;border:none;font-family:var(--font-ui);font-size:14px}
+.news-form button{padding:13px 28px;border-radius:30px;background:var(--c-primary);color:#fff;font-weight:600;font-family:var(--font-ui)}
+@media(max-width:760px){.news-row{grid-template-columns:1fr}}
+
+/* === FOOTER === */
+.footer{background:#1a1208;color:#cfc1a0;padding:60px 0 20px;font-family:var(--font-ui)}
+html.dark-mode .footer{background:#070605}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px}
+.foot-col h4{color:#fff;font-family:var(--font-display);font-size:18px;margin-bottom:18px;position:relative;padding-bottom:10px}
+.foot-col h4::after{content:'';position:absolute;bottom:0;left:0;width:36px;height:2px;background:var(--c-primary)}
+.foot-col ul{list-style:none}
+.foot-col li{padding:6px 0;font-size:14px;color:#a8997a}
+.foot-col li a{transition:color .2s,padding-left .2s;display:inline-block}
+.foot-col li a:hover{color:var(--c-primary);padding-left:6px}
+.foot-about p{font-size:14px;color:#a8997a;margin:14px 0 16px}
+.foot-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,107,0,.15);color:var(--c-primary);
+  display:inline-flex;align-items:center;justify-content:center;margin-right:8px;transition:all .25s}
+.foot-social a:hover{background:var(--c-primary);color:#fff;transform:translateY(-3px)}
+.foot-contact li{display:flex;gap:10px;align-items:flex-start}
+.foot-contact i{color:var(--c-primary);margin-top:4px}
+.foot-bottom{margin-top:40px;padding-top:20px;border-top:1px solid #2a1f12;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:13px}
+.foot-bottom .dev{font-size:12px;opacity:.7}
+.foot-bottom .dev a{color:var(--c-primary)}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
+
+/* === BACK TO TOP === */
+.back-top{position:fixed;right:22px;bottom:22px;width:48px;height:48px;border-radius:50%;
+  background:var(--c-primary);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:18px;box-shadow:0 6px 18px rgba(255,107,0,.45);opacity:0;visibility:hidden;
+  transition:all .3s;z-index:900}
+.back-top.show{opacity:1;visibility:visible}
+.back-top:hover{transform:translateY(-4px)}
+
+/* === MODALS === */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:3000;display:none;
+  align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex;animation:fadeIn .25s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-content{background:var(--c-card);max-width:720px;width:100%;max-height:85vh;overflow-y:auto;
+  border-radius:14px;padding:30px;border:1px solid var(--c-border);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--c-border);padding-bottom:14px;margin-bottom:16px}
+.modal-head h3{font-size:22px}
+.modal-close{width:36px;height:36px;border-radius:50%;background:var(--c-alt);color:var(--c-text);font-size:18px}
+.modal-body h4{font-family:var(--font-ui);color:var(--c-primary);font-size:15px;margin:18px 0 6px;text-transform:uppercase;letter-spacing:1px}
+.modal-body p{font-size:14.5px;color:var(--c-text2);margin-bottom:10px;line-height:1.65}
+.modal-actions{margin-top:20px;display:flex;gap:10px;justify-content:flex-end}
+.modal-actions button{padding:9px 18px;border-radius:8px;background:var(--c-primary);color:#fff;font-family:var(--font-ui);font-weight:600;font-size:13px}
+
+/* === TOAST === */
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(120%);
+  background:var(--c-primary);color:#fff;padding:14px 22px;border-radius:30px;font-family:var(--font-ui);font-weight:600;
+  box-shadow:0 10px 30px rgba(255,107,0,.4);transition:transform .35s ease;z-index:4000;font-size:14px}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* === SETTINGS PANEL === */
+.settings-toggle{width:38px;height:38px;border-radius:50%;background:var(--c-alt);
+  display:flex;align-items:center;justify-content:center;color:var(--c-primary);transition:transform .35s}
+.settings-toggle:hover{transform:rotate(60deg);background:var(--c-primary);color:#fff}
+.settings-panel{position:fixed;top:0;right:0;height:100vh;width:340px;max-width:90vw;background:var(--c-card);
+  border-left:1px solid var(--c-border);z-index:3500;transform:translateX(110%);transition:transform .35s ease;
+  box-shadow:-20px 0 60px rgba(0,0,0,.18);display:flex;flex-direction:column}
+.settings-panel.open{transform:translateX(0)}
+.settings-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:3400;opacity:0;visibility:hidden;transition:all .3s}
+.settings-backdrop.open{opacity:1;visibility:visible}
+.sp-head{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--c-border)}
+.sp-head h3{font-size:20px;display:flex;align-items:center;gap:10px}
+.sp-head h3 i{color:var(--c-primary)}
+.sp-close{width:34px;height:34px;border-radius:50%;background:var(--c-alt);color:var(--c-text);font-size:14px}
+.sp-body{flex:1;overflow-y:auto;padding:18px 22px}
+.sp-group{margin-bottom:24px}
+.sp-group h4{font-family:var(--font-ui);font-size:12px;color:var(--c-text2);text-transform:uppercase;
+  letter-spacing:1.5px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.sp-group h4 i{color:var(--c-primary);font-size:13px}
+.seg{display:flex;background:var(--c-alt);border-radius:10px;padding:4px;gap:4px}
+.seg button{flex:1;padding:9px 10px;border-radius:8px;font-family:var(--font-ui);font-size:13px;font-weight:600;
+  color:var(--c-text2);transition:all .25s;display:flex;align-items:center;justify-content:center;gap:6px}
+.seg button.active{background:var(--c-card);color:var(--c-primary);box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.sp-switch{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:var(--c-alt);border-radius:10px;margin-bottom:8px}
+.sp-switch label{font-family:var(--font-ui);font-size:14px;font-weight:500;display:flex;align-items:center;gap:10px}
+.sp-switch label i{color:var(--c-primary);width:18px;text-align:center}
+.toggle{position:relative;width:42px;height:24px;background:var(--c-border);border-radius:14px;cursor:pointer;transition:background .25s;flex-shrink:0}
+.toggle::after{content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;background:#fff;border-radius:50%;transition:all .25s;box-shadow:0 2px 4px rgba(0,0,0,.2)}
+.toggle.on{background:var(--c-primary)}
+.toggle.on::after{left:21px}
+.sp-foot{padding:14px 22px;border-top:1px solid var(--c-border);display:flex;gap:10px}
+.sp-foot button{flex:1;padding:11px;border-radius:10px;font-family:var(--font-ui);font-weight:600;font-size:13px;transition:all .2s}
+.sp-reset{background:var(--c-alt);color:var(--c-text)}
+.sp-reset:hover{background:var(--c-border)}
+.sp-done{background:var(--c-primary);color:#fff}
+.sp-done:hover{transform:translateY(-1px)}
+
+/* Font-size scale (applied to html via class) */
+html.font-sm{font-size:14px}
+html.font-md{font-size:16px}
+html.font-lg{font-size:18px}
+
+/* Reduce motion */
+html.no-motion *,html.no-motion *::before,html.no-motion *::after{
+  animation-duration:.001s!important;animation-delay:0s!important;transition-duration:.001s!important;scroll-behavior:auto!important
+}
+html.no-motion .hero{background-attachment:scroll}
+
+/* High contrast */
+html.high-contrast{--c-text:#000;--c-text2:#222;--c-border:#444}
+html.high-contrast.dark-mode{--c-text:#fff;--c-text2:#eee;--c-border:#aaa}
+html.high-contrast .obj-card,html.high-contrast .test-card,html.high-contrast .proj-card,html.high-contrast .team-card{border-width:2px}
+.wave{position:absolute;left:0;width:100%;height:60px;overflow:hidden;line-height:0}
+.wave svg{width:100%;height:100%}
+.wave.top{top:-1px}
+.wave.bot{bottom:-1px;transform:rotate(180deg)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="container">
+    <div>
+      <a href="tel:+918384845479"><i class="fas fa-phone-alt"></i> +91-83848-45479</a>
+      <a href="mailto:saarthisanatanseva@gmail.com"><i class="fas fa-envelope"></i>saarthisanatanseva@gmail.com</a>
+    </div>
+    <div class="ticker">
+      <span class="ticker-track" data-en="Free Medical Camp — July 15 | Register Now → | Bal Vidya Abhiyan enrollment open for 2026 academic year" data-hi="निःशुल्क चिकित्सा शिविर — 15 जुलाई | अभी पंजीकरण करें → | बाल विद्या अभियान 2026 सत्र के लिए नामांकन खुला है">Free Medical Camp — July 15 | Register Now → | Bal Vidya Abhiyan enrollment open for 2026 academic year</span>
+    </div>
+    <div class="socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+    </div>
+  </div>
+</div>
+<header class="header" id="header">
+  <div class="container">
+    <a href="#home" class="logo">
+      <div class="logo-emblem">स</div>
+      <div class="logo-text">
+        <span class="name" data-en="Saarthi Aadarsh Seva Sansthan" data-hi="सारथी आदर्श सेवा संस्थान">Saarthi Aadarsh Seva Sansthan</span>
+        <span class="tag" data-en="Serving Humanity, Transforming Lives" data-hi="मानवता की सेवा, जीवन का परिवर्तन">Serving Humanity, Transforming Lives</span>
+      </div>
+    </a>
+    <nav class="nav">
+      <div class="nav-item"><a href="#about"><span data-en="About Us" data-hi="हमारे बारे में">About Us</span> <i class="fas fa-chevron-down" style="font-size:10px"></i></a>
+        <div class="dropdown">
+          <a href="#about" data-en="Our Story" data-hi="हमारी कहानी">Our Story</a>
+          <a href="#about" data-en="Mission & Vision" data-hi="उद्देश्य एवं दृष्टि">Mission & Vision</a>
+          <a href="#team" data-en="Our Team" data-hi="हमारी टीम">Our Team</a>
+          <a href="#team" data-en="Advisors" data-hi="सलाहकार">Advisors</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="#objectives"><span data-en="Our Work" data-hi="हमारा कार्य">Our Work</span> <i class="fas fa-chevron-down" style="font-size:10px"></i></a>
+        <div class="dropdown">
+          <a href="#objectives" data-en="Education Support" data-hi="शिक्षा सहायता">Education Support</a>
+          <a href="#objectives" data-en="Health & Medical Aid" data-hi="स्वास्थ्य सहायता">Health & Medical Aid</a>
+          <a href="#objectives" data-en="Women Empowerment" data-hi="महिला सशक्तिकरण">Women Empowerment</a>
+          <a href="#objectives" data-en="Child Welfare" data-hi="बाल कल्याण">Child Welfare</a>
+          <a href="#objectives" data-en="Livelihood Training" data-hi="आजीविका प्रशिक्षण">Livelihood Training</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="#donate"><span data-en="Get Involved" data-hi="जुड़ें">Get Involved</span> <i class="fas fa-chevron-down" style="font-size:10px"></i></a>
+        <div class="dropdown">
+          <a href="#contact" data-en="Volunteer With Us" data-hi="स्वयंसेवक बनें">Volunteer With Us</a>
+          <a href="#donate" data-en="Donate" data-hi="दान करें">Donate</a>
+          <a href="#contact" data-en="Corporate Partnership" data-hi="कॉर्पोरेट साझेदारी">Corporate Partnership</a>
+          <a href="#contact" data-en="Open a Branch" data-hi="नई शाखा खोलें">Open a Branch</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="#gallery"><span data-en="Media" data-hi="मीडिया">Media</span> <i class="fas fa-chevron-down" style="font-size:10px"></i></a>
+        <div class="dropdown">
+          <a href="#gallery" data-en="Photo Gallery" data-hi="फोटो गैलरी">Photo Gallery</a>
+          <a href="#stories" data-en="Success Stories" data-hi="सफलता की कहानियाँ">Success Stories</a>
+          <a href="#" data-en="News & Updates" data-hi="समाचार एवं अपडेट">News & Updates</a>
+          <a href="#" data-en="Annual Reports" data-hi="वार्षिक रिपोर्ट">Annual Reports</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="#contact" data-en="Contact Us" data-hi="संपर्क करें">Contact Us</a></div>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-toggle">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="hi">HI</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+      <button class="settings-toggle" id="settingsToggle" aria-label="Open settings"><i class="fas fa-cog"></i></button>
+      <a href="#donate" class="btn btn-primary" style="padding:10px 20px;font-size:13px" data-en="Donate Now" data-hi="दान करें">Donate Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mm-head">
+    <div class="logo"><div class="logo-emblem">स</div><div class="logo-text"><span class="name">Saarthi</span></div></div>
+    <button class="mm-close" id="mmClose"><i class="fas fa-times"></i></button>
+  </div>
+  <nav>
+    <div><a href="#about" data-en="About Us" data-hi="हमारे बारे में">About Us</a></div>
+    <div><a href="#objectives" data-en="Our Work" data-hi="हमारा कार्य">Our Work</a></div>
+    <div><a href="#projects" data-en="Projects" data-hi="परियोजनाएं">Projects</a></div>
+    <div><a href="#team" data-en="Our Team" data-hi="हमारी टीम">Our Team</a></div>
+    <div><a href="#donate" data-en="Donate" data-hi="दान करें">Donate</a></div>
+    <div><a href="#gallery" data-en="Gallery" data-hi="गैलरी">Gallery</a></div>
+    <div><a href="#contact" data-en="Contact" data-hi="संपर्क">Contact</a></div>
+  </nav>
+  <div class="mm-actions">
+    <div class="lang-toggle">
+      <button data-lang="en" class="active">EN</button>
+      <button data-lang="hi">HI</button>
+    </div>
+    <a href="#donate" class="btn btn-primary" style="padding:10px 20px;font-size:13px" data-en="Donate Now" data-hi="दान करें">Donate Now</a>
+  </div>
+</div>
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-badge" data-en="Est. 2015 | Bahosi, U.P." data-hi="स्थापित 2015 | बहोसी, उ.प्र.">Est. 2015 | Bahosi, U.P.</div>
+    <h1 id="heroTitle"></h1>
+    <p class="sub" data-en="Serving Humanity, Transforming Lives — together we walk the path of dignity" data-hi="मानवता की सेवा, जीवन का परिवर्तन — सम्मान के पथ पर हम साथ चलते हैं">Serving Humanity, Transforming Lives — together we walk the path of dignity</p>
+    <div class="hero-ctas">
+      <a href="#donate" class="btn btn-primary" data-en="Donate Now" data-hi="अभी दान करें"><i class="fas fa-heart"></i> Donate Now</a>
+      <a href="#about" class="btn btn-outline" data-en="Learn More" data-hi="और जानें">Learn More <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+  <a href="#stats" class="scroll-down"><i class="fas fa-chevron-down"></i></a>
+</section>
+<section class="stats" id="stats" style="padding:60px 0">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="0">
+        <i class="fas fa-home"></i>
+        <div class="stat-num" data-count="12400">0</div>
+        <div class="stat-label" data-en="Families Served" data-hi="परिवारों की सेवा">Families Served</div>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-graduation-cap"></i>
+        <div class="stat-num" data-count="3800">0</div>
+        <div class="stat-label" data-en="Children Educated" data-hi="बच्चों को शिक्षा">Children Educated</div>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-heartbeat"></i>
+        <div class="stat-num" data-count="8500">0</div>
+        <div class="stat-label" data-en="Medical Beneficiaries" data-hi="चिकित्सा लाभार्थी">Medical Beneficiaries</div>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-female"></i>
+        <div class="stat-num" data-count="2200">0</div>
+        <div class="stat-label" data-en="Women Empowered" data-hi="महिलाएँ सशक्त">Women Empowered</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img" data-aos="fade-right">
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80" alt="Village community">
+        <div class="badge"><span data-en="10+ Years of Service" data-hi="10+ वर्षों की सेवा">10+ Years of Service</span></div>
+      </div>
+      <div class="about-text" data-aos="fade-left">
+        <span class="kicker" data-en="About Our Sansthan" data-hi="हमारे संस्थान के बारे में">About Our Sansthan</span>
+        <h2 data-en="Walking Beside the Marginalized as their Saarthi" data-hi="हाशिये पर खड़े लोगों के सारथी बनकर">Walking Beside the Marginalized as their Saarthi</h2>
+        <p data-en="Saarthi Aadarsh Seva Sansthan is committed to building a society where every individual — regardless of caste, creed, or economic status — has access to education, healthcare, and livelihood opportunities. We walk alongside the marginalized as their 'Saarthi' — their charioteer — guiding them toward a dignified future." data-hi="सारथी आदर्श सेवा संस्थान एक ऐसे समाज के निर्माण के लिए प्रतिबद्ध है, जहाँ हर व्यक्ति को — जाति, धर्म या आर्थिक स्थिति की परवाह किए बिना — शिक्षा, स्वास्थ्य और आजीविका का अवसर मिले।">Saarthi Aadarsh Seva Sansthan is committed to building a society where every individual — regardless of caste, creed, or economic status — has access to education, healthcare, and livelihood opportunities. We walk alongside the marginalized as their 'Saarthi' — their charioteer — guiding them toward a dignified future.</p>
+        <div class="mv-grid">
+          <div class="mv-card">
+            <h4 data-en="Mission" data-hi="मिशन">Mission</h4>
+            <p data-en="Empowering rural communities of Uttar Pradesh through education, healthcare, and sustainable livelihood programs." data-hi="शिक्षा, स्वास्थ्य और सतत् आजीविका कार्यक्रमों के माध्यम से उत्तर प्रदेश के ग्रामीण समुदायों को सशक्त बनाना।">Empowering rural communities of Uttar Pradesh through education, healthcare, and sustainable livelihood programs.</p>
+          </div>
+          <div class="mv-card">
+            <h4 data-en="Vision" data-hi="दृष्टि">Vision</h4>
+            <p data-en="A self-reliant, equitable India where no child goes to bed hungry, no family lacks shelter, and every woman stands empowered — by 2035." data-hi="एक आत्मनिर्भर, समतामूलक भारत जहाँ कोई बच्चा भूखा न सोए, कोई परिवार बेघर न हो, और हर महिला सशक्त हो।">A self-reliant, equitable India where no child goes to bed hungry, no family lacks shelter, and every woman stands empowered — by 2035.</p>
+          </div>
+        </div>
+        <div style="margin-top:26px">
+          <a href="#projects" class="btn btn-ghost" data-en="Read More →" data-hi="और पढ़ें →">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="objectives" id="objectives" style="background:var(--c-alt)">
+  <div class="container">
+    <div class="section-title">
+      <span class="kicker" data-en="What We Do" data-hi="हम क्या करते हैं">What We Do</span>
+      <h2 data-en="Our Core Objectives" data-hi="हमारे प्रमुख उद्देश्य">Our Core Objectives</h2>
+      <p data-en="Six pillars guiding our humanitarian mission across rural Uttar Pradesh." data-hi="ग्रामीण उत्तर प्रदेश में हमारे मानवीय मिशन के छह स्तंभ।">Six pillars guiding our humanitarian mission across rural Uttar Pradesh.</p>
+    </div>
+    <div class="obj-grid">
+      <div class="obj-card" data-aos="zoom-in" data-aos-delay="0">
+        <div class="obj-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h3 data-en="Education for All" data-hi="सबके लिए शिक्षा">Education for All</h3>
+        <p data-en="Providing free schooling, books, uniforms, and tutoring to underprivileged children in rural UP." data-hi="ग्रामीण उ.प्र. के वंचित बच्चों को निःशुल्क शिक्षा, पुस्तकें, वर्दी और शिक्षण प्रदान करना।">Providing free schooling, books, uniforms, and tutoring to underprivileged children in rural UP.</p>
+      </div>
+      <div class="obj-card" data-aos="zoom-in" data-aos-delay="100">
+        <div class="obj-icon"><i class="fas fa-heartbeat"></i></div>
+        <h3 data-en="Health & Medical Aid" data-hi="स्वास्थ्य सेवा">Health & Medical Aid</h3>
+        <p data-en="Organizing free medical camps, distributing medicines, and connecting patients with specialist care." data-hi="निःशुल्क चिकित्सा शिविर आयोजित करना, दवाएँ वितरित करना और विशेषज्ञ देखभाल से जोड़ना।">Organizing free medical camps, distributing medicines, and connecting patients with specialist care.</p>
+      </div>
+      <div class="obj-card" data-aos="zoom-in" data-aos-delay="200">
+        <div class="obj-icon"><i class="fas fa-female"></i></div>
+        <h3 data-en="Women Empowerment" data-hi="महिला सशक्तिकरण">Women Empowerment</h3>
+        <p data-en="Vocational training, self-help groups, and legal awareness programs for rural women." data-hi="ग्रामीण महिलाओं के लिए व्यावसायिक प्रशिक्षण, स्वयं सहायता समूह एवं कानूनी जागरूकता कार्यक्रम।">Vocational training, self-help groups, and legal awareness programs for rural women.</p>
+      </div>
+      <div class="obj-card" data-aos="zoom-in" data-aos-delay="0">
+        <div class="obj-icon"><i class="fas fa-seedling"></i></div>
+        <h3 data-en="Livelihood Support" data-hi="आजीविका सहायता">Livelihood Support</h3>
+        <p data-en="Skill development, micro-enterprise support, and agriculture training for unemployed youth." data-hi="बेरोजगार युवाओं के लिए कौशल विकास, सूक्ष्म उद्यम सहायता एवं कृषि प्रशिक्षण।">Skill development, micro-enterprise support, and agriculture training for unemployed youth.</p>
+      </div>
+      <div class="obj-card" data-aos="zoom-in" data-aos-delay="100">
+        <div class="obj-icon"><i class="fas fa-child"></i></div>
+        <h3 data-en="Child Welfare" data-hi="बाल कल्याण">Child Welfare</h3>
+        <p data-en="Child nutrition programs, vaccination drives, and protection of child rights in underserved communities." data-hi="वंचित समुदायों में बाल पोषण कार्यक्रम, टीकाकरण अभियान और बाल अधिकारों की सुरक्षा।">Child nutrition programs, vaccination drives, and protection of child rights in underserved communities.</p>
+      </div>
+      <div class="obj-card" data-aos="zoom-in" data-aos-delay="200">
+        <div class="obj-icon"><i class="fas fa-hands-helping"></i></div>
+        <h3 data-en="Community Development" data-hi="सामुदायिक विकास">Community Development</h3>
+        <p data-en="Sanitation drives, rural infrastructure support, and disaster relief in times of crisis." data-hi="स्वच्छता अभियान, ग्रामीण अधोसंरचना सहायता और संकट के समय आपदा राहत।">Sanitation drives, rural infrastructure support, and disaster relief in times of crisis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="projects" id="projects">
+  <div class="container">
+    <div class="section-title">
+      <span class="kicker" data-en="Featured Programs" data-hi="विशेष कार्यक्रम">Featured Programs</span>
+      <h2 data-en="Our Initiatives" data-hi="हमारी पहल">Our Initiatives</h2>
+      <p data-en="Flagship projects transforming lives across 18+ villages in Uttar Pradesh." data-hi="उत्तर प्रदेश के 18+ गाँवों में जीवन बदलने वाली प्रमुख परियोजनाएं।">Flagship projects transforming lives across 18+ villages in Uttar Pradesh.</p>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card" data-aos="fade-up">
+        <div class="proj-img">
+          <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=800&q=80" alt="Children learning">
+          <div class="proj-overlay"><a href="#" class="btn" data-en="Know More" data-hi="और जानें">Know More</a></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="proj-tag" data-en="Education" data-hi="शिक्षा">Education</span><span class="proj-tag green" data-en="Ongoing" data-hi="जारी">Ongoing</span></div>
+          <h3>Bal Vidya Abhiyan</h3>
+          <p data-en="A district-wide initiative launched in 2019 providing free educational kits, remedial classes, and digital literacy to 1,200+ children across 18 villages in Bahosi block." data-hi="2019 में शुरू की गई एक जिला-व्यापी पहल, जिसके तहत बहोसी क्षेत्र के 18 गाँवों के 1,200+ बच्चों को मुफ्त शैक्षणिक किट, पुनर्मेदन कक्षाएं और डिजिटल साक्षरता प्रदान की जाती है।">A district-wide initiative launched in 2019 providing free educational kits, remedial classes, and digital literacy to 1,200+ children across 18 villages in Bahosi block.</p>
+        </div>
+      </div>
+      <div class="proj-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="proj-img">
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80" alt="Medical camp">
+          <div class="proj-overlay"><a href="#" class="btn" data-en="Know More" data-hi="और जानें">Know More</a></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="proj-tag" data-en="Healthcare" data-hi="स्वास्थ्य">Healthcare</span><span class="proj-tag green" data-en="Ongoing" data-hi="जारी">Ongoing</span></div>
+          <h3>Aarogya Setu Medical Camp</h3>
+          <p data-en="Bi-monthly free health camps offering consultations, blood tests, medicines, and specialist referrals. Over 8,500 beneficiaries since 2017." data-hi="हर दो महीने में आयोजित निःशुल्क स्वास्थ्य शिविर, जिसमें परामर्श, रक्त परीक्षण, दवाएँ और विशेषज्ञ रेफरल शामिल हैं।">Bi-monthly free health camps offering consultations, blood tests, medicines, and specialist referrals. Over 8,500 beneficiaries since 2017.</p>
+        </div>
+      </div>
+      <div class="proj-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="proj-img">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80" alt="Women training">
+          <div class="proj-overlay"><a href="#" class="btn" data-en="Know More" data-hi="और जानें">Know More</a></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="proj-tag" data-en="Empowerment" data-hi="सशक्तिकरण">Empowerment</span><span class="proj-tag green" data-en="Ongoing" data-hi="जारी">Ongoing</span></div>
+          <h3>Shakti — Women's Skill Hub</h3>
+          <p data-en="A women-centered skill training program in tailoring, handicrafts, and computer literacy, helping 400+ women achieve financial independence since 2020." data-hi="सिलाई, हस्तशिल्प और कंप्यूटर साक्षरता में महिलाओं के लिए कौशल प्रशिक्षण कार्यक्रम, जिसने 2020 से 400+ महिलाओं को आत्मनिर्भर बनाया है।">A women-centered skill training program in tailoring, handicrafts, and computer literacy, helping 400+ women achieve financial independence since 2020.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="team" id="team">
+  <div class="container">
+    <div class="section-title">
+      <span class="kicker" data-en="Leadership" data-hi="नेतृत्व">Leadership</span>
+      <h2 data-en="Meet Our Team" data-hi="हमारी टीम">Meet Our Team</h2>
+      <p data-en="The dedicated individuals driving Saarthi's mission forward." data-hi="सारथी के मिशन को आगे बढ़ाने वाले समर्पित व्यक्ति।">The dedicated individuals driving Saarthi's mission forward.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card founder" data-aos="fade-up">
+        <div class="avatar">GS</div>
+        <div class="team-info">
+          <h3>Ganesh Sanap</h3>
+          <span class="role-badge" data-en="Founder & President" data-hi="संस्थापक एवं अध्यक्ष">Founder & President</span>
+          <p data-en="Shri Ganesh Sanap, a visionary social reformer from Uttar Pradesh, founded Saarthi Aadarsh Seva Sansthan in 2015 driven by a lifelong commitment to uplifting the rural poor. A graduate of Kanpur University with a background in social work, he has dedicated over two decades to grassroots humanitarian service. His leadership has shaped the organization's philosophy that sustainable change begins at the village level." data-hi="श्री गणेश सनप, महाराष्ट्र के एक दूरदर्शी समाज सुधारक, ने 2015 में ग्रामीण निर्धनों के उत्थान की प्रतिबद्धता से प्रेरित होकर सारथी आदर्श सेवा संस्थान की स्थापना की। उन्होंने दो दशकों से अधिक समय जमीनी मानवीय सेवा को समर्पित किया है।">Shri Ganesh Sanap, a visionary social reformer from Maharashtra, founded Saarthi Aadarsh Seva Sansthan in 2015 driven by a lifelong commitment to uplifting the rural poor. he has dedicated over two decades to grassroots humanitarian service. His leadership has shaped the organization's philosophy that sustainable change begins at the village level.</p>
+        </div>
+      </div>
+      <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="avatar">SD</div>
+        <div class="team-info">
+          <h3>Sanjeev Kumar</h3>
+          <span class="role-badge" data-en="Co-Founder & Vice President" data-hi="सह-संस्थापक एवं उपाध्यक्ष">Co-Founder & Vice President</span>
+          <p data-en="Shri Sanjeev Kumar brings 18 years of experience in rural administration and community mobilization. A dedicated public servant by training, he co-founded the organization to bridge the gap between government welfare schemes and last-mile beneficiaries." data-hi="श्री संजीव कुमार ग्रामीण प्रशासन और सामुदायिक संगठन में 18 वर्षों का अनुभव रखते हैं। उन्होंने सरकारी कल्याण योजनाओं को अंतिम लाभार्थी तक पहुँचाने हेतु संस्था की सह-स्थापना की।">Shri Sanjeev Kumar brings 18 years of experience in rural administration and community mobilization. A dedicated public servant by training, he co-founded the organization to bridge the gap between government welfare schemes and last-mile beneficiaries.</p>
+        </div>
+      </div>
+      <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="avatar">YD</div>
+        <div class="team-info">
+          <h3>Yogesh Dwivedi</h3>
+          <span class="role-badge" data-en="Secretary & COO" data-hi="सचिव एवं मुख्य परिचालन अधिकारी">Secretary & COO</span>
+          <p data-en="Shri Yogesh Dwivedi manages the day-to-day administration, documentation, and compliance of the organization. A meticulous administrator with expertise in NGO governance, he ensures that every rupee donated is accounted for and every program is executed with transparency and impact." data-hi="श्री योगेश द्विवेदी संस्था के दैनिक प्रशासन, दस्तावेज़ीकरण और अनुपालन का प्रबंधन करते हैं। वे यह सुनिश्चित करते हैं कि दान का प्रत्येक रुपया पारदर्शिता के साथ खर्च हो।">Shri Yogesh Dwivedi manages the day-to-day administration, documentation, and compliance of the organization. A meticulous administrator with expertise in NGO governance, he ensures that every rupee donated is accounted for and every program is executed with transparency and impact.</p>
+        </div>
+      </div>
+      <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="avatar">DD</div>
+        <div class="team-info">
+          <h3>Devraj Dwivedi</h3>
+          <span class="role-badge" data-en="Technical Support & Web Lead" data-hi="तकनीकी सहायता एवं वेब प्रमुख">Technical Support & Web Lead</span>
+          <p data-en="Devraj Dwivedi is a Full Stack Developer responsible for the organization's digital presence, website development, and technology infrastructure. He ensures the NGO reaches its beneficiaries and donors through accessible, modern web platforms." data-hi="देवराज द्विवेदी एक फुल स्टैक डेवलपर हैं, जो संस्था की डिजिटल उपस्थिति, वेबसाइट विकास और प्रौद्योगिकी अधोसंरचना के लिए जिम्मेदार हैं।">Devraj Dwivedi is a Full Stack Developer responsible for the organization's digital presence, website development, and technology infrastructure. He ensures the NGO reaches its beneficiaries and donors through accessible, modern web platforms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="stories" id="stories">
+  <div class="container">
+    <div class="section-title">
+      <span class="kicker" data-en="Lives Transformed" data-hi="बदली हुई ज़िंदगियाँ">Lives Transformed</span>
+      <h2 data-en="Beneficiary Stories" data-hi="लाभार्थियों की कहानियाँ">Beneficiary Stories</h2>
+    </div>
+    <div class="swiper storySwiper" data-aos="fade-up">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="story-slide">
+            <i class="fas fa-quote-left quote-i"></i>
+            <p data-en="Before Saarthi found us, my daughter had dropped out of school because we couldn't afford books. Today she is in Class 9, top of her class. The Saarthi team didn't just give us books — they gave us a future." data-hi="सारथी के आने से पहले मेरी बेटी किताबों के अभाव में स्कूल छोड़ चुकी थी। आज वह कक्षा 9 में पहले स्थान पर है।">Before Saarthi found us, my daughter had dropped out of school because we couldn't afford books. Today she is in Class 9, top of her class. The Saarthi team didn't just give us books — they gave us a future.</p>
+            <div class="story-meta">
+              <div class="avatar">MD</div>
+              <div style="text-align:left">
+                <div class="name">Meena Devi</div>
+                <div class="loc" data-en="Village Rampur" data-hi="ग्राम रामपुर">Village Rampur</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="story-slide">
+            <i class="fas fa-quote-left quote-i"></i>
+            <p data-en="I was a daily wage labourer with no skills. After completing Saarthi's tailoring and machine training, I opened my own small shop. My family no longer worries about food." data-hi="मैं एक दिहाड़ी मजदूर था। सारथी के प्रशिक्षण के बाद मैंने अपनी छोटी दुकान खोली। अब मेरे परिवार को भोजन की चिंता नहीं।">I was a daily wage labourer with no skills. After completing Saarthi's tailoring and machine training, I opened my own small shop. My family no longer worries about food.</p>
+            <div class="story-meta">
+              <div class="avatar">SK</div>
+              <div style="text-align:left">
+                <div class="name">Suresh Kumar</div>
+                <div class="loc" data-en="Village Bindki, Fatehpur" data-hi="ग्राम बिंदकी, फतेहपुर">Village Bindki, Fatehpur</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="story-slide">
+            <i class="fas fa-quote-left quote-i"></i>
+            <p data-en="The Shakti program taught me to use a computer and manage accounts. Now I run a small stitching unit employing 6 other women from my village. Saarthi changed not just my life but my entire community." data-hi="शक्ति कार्यक्रम ने मुझे कंप्यूटर और हिसाब-किताब सिखाया। अब मैं 6 महिलाओं को रोजगार देती हूँ।">The Shakti program taught me to use a computer and manage accounts. Now I run a small stitching unit employing 6 other women from my village. Saarthi changed not just my life but my entire community.</p>
+            <div class="story-meta">
+              <div class="avatar">KS</div>
+              <div style="text-align:left">
+                <div class="name">Kavita Singh</div>
+                <div class="loc" data-en="Village Khairatpur" data-hi="ग्राम खैरातपुर">Village Khairatpur</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination" style="margin-top:24px;position:relative"></div>
+    </div>
+  </div>
+</section>
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-title">
+      <span class="kicker" data-en="Voices of Trust" data-hi="विश्वास की आवाज़ें">Voices of Trust</span>
+      <h2 data-en="What People Say About Us" data-hi="लोग हमारे बारे में क्या कहते हैं">What People Say About Us</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card" data-aos="fade-up">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p data-en="Donating to Saarthi was the most meaningful thing I did this year. The transparency reports and field updates gave me full confidence." data-hi="सारथी को दान करना मेरे इस वर्ष का सबसे सार्थक कार्य था। पारदर्शिता रिपोर्ट और अद्यतन ने पूरा भरोसा दिया।">"Donating to Saarthi was the most meaningful thing I did this year. The transparency reports and field updates gave me full confidence."</p>
+        <div class="meta">
+          <div class="avatar">RA</div>
+          <div><strong>Rahul Agarwal</strong><span data-en="Donor — Kanpur" data-hi="दाता — कानपुर">Donor — Kanpur</span></div>
+        </div>
+      </div>
+      <div class="test-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p data-en="I volunteered for their medical camp in February 2024. The organization on the ground is impressive — every person was registered, examined, and given medicine within 45 minutes." data-hi="मैंने फरवरी 2024 में उनके मेडिकल कैंप में स्वयंसेवा की। ज़मीन पर संगठन प्रभावशाली है।">"I volunteered for their medical camp in February 2024. The organization on the ground is impressive — every person was registered, examined, and given medicine within 45 minutes."</p>
+        <div class="meta">
+          <div class="avatar">NS</div>
+          <div><strong>Dr. Neha Srivastava</strong><span data-en="Volunteer — Lucknow" data-hi="स्वयंसेवक — लखनऊ">Volunteer — Lucknow</span></div>
+        </div>
+      </div>
+      <div class="test-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p data-en="We partnered with Saarthi for a CSR initiative and the impact documentation they provided exceeded our expectations." data-hi="हमने एक CSR पहल के लिए सारथी के साथ साझेदारी की और उनके द्वारा प्रदान किए गए प्रभाव दस्तावेज़ हमारी अपेक्षाओं से अधिक थे।">"We partnered with Saarthi for a CSR initiative and the impact documentation they provided exceeded our expectations."</p>
+        <div class="meta">
+          <div class="avatar">AE</div>
+          <div><strong>Anand Enterprises</strong><span data-en="CSR Partner — Kanpur" data-hi="सीएसआर पार्टनर — कानपुर">CSR Partner — Kanpur</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="donate" id="donate">
+  <div class="container">
+    <h2 data-en="Your Support Changes Lives" data-hi="आपका सहयोग जीवन बदलता है" data-aos="fade-up">Your Support Changes Lives</h2>
+    <p class="sub" data-en="Every rupee you give feeds a child, educates a girl, or heals a family. Donations qualify for 80G tax exemption under the Income Tax Act, 1961." data-hi="आपका हर रुपया एक बच्चे को खाना, एक बच्ची को शिक्षा, और एक परिवार को स्वास्थ्य देता है। दान आयकर अधिनियम, 1961 के अंतर्गत 80G कर छूट के योग्य हैं।" data-aos="fade-up">Every rupee you give feeds a child, educates a girl, or heals a family. Donations qualify for 80G tax exemption under the Income Tax Act, 1961.</p>
+
+    <div class="impact-row" data-aos="fade-up">
+      <div class="impact-card"><div class="ic">🍱</div><strong>₹500</strong><span data-en="Feeds a family for a week" data-hi="एक परिवार के लिए सप्ताह भर भोजन">Feeds a family for a week</span></div>
+      <div class="impact-card"><div class="ic">📚</div><strong>₹1,000</strong><span data-en="School kit for one child" data-hi="एक बच्चे के लिए स्कूल किट">School kit for one child</span></div>
+      <div class="impact-card"><div class="ic">💊</div><strong>₹2,500</strong><span data-en="Medical aid for three cows" data-hi="तीन गायों के लिए चिकित्सा सहायता">Medical aid for three cows</span></div>
+      <div class="impact-card"><div class="ic">🏠</div><strong>₹5,000</strong><span data-en="Monthly support for one family" data-hi="एक परिवार के लिए मासिक सहयोग">Monthly support for one family</span></div>
+    </div>
+
+    <div class="donate-box" data-aos="zoom-in">
+      <h3 style="text-align:center;font-family:var(--font-display);font-size:24px;margin-bottom:6px" data-en="Choose Your Contribution" data-hi="अपना योगदान चुनें">Choose Your Contribution</h3>
+      <p style="text-align:center;color:var(--c-text2);font-size:14px;margin-bottom:18px" data-en="Select a preset amount or enter a custom value." data-hi="कोई पूर्व-निर्धारित राशि चुनें या कस्टम मान दर्ज करें।">Select a preset amount or enter a custom value.</p>
+      <div class="amount-row" id="amountRow">
+        <button class="amt-pill" data-amt="500">₹500</button>
+        <button class="amt-pill active" data-amt="1000">₹1,000</button>
+        <button class="amt-pill" data-amt="2500">₹2,500</button>
+        <button class="amt-pill" data-amt="5000">₹5,000</button>
+        <button class="amt-pill" data-amt="custom" data-en="Custom" data-hi="कस्टम">Custom</button>
+      </div>
+      <div id="customAmtBox"><input type="number" id="customAmt" placeholder="Enter amount in ₹" min="100"></div>
+      <input type="text" id="donorName" placeholder="Your Name (optional)" data-en-ph="Your Name (optional)" data-hi-ph="आपका नाम (वैकल्पिक)">
+      <button class="donate-cta" id="proceedDonate" data-en="Proceed to Donate →" data-hi="दान करें →">Proceed to Donate →</button>
+      <div class="trust-row">
+        <span><i class="fas fa-lock"></i> <span data-en="Secure & Verified" data-hi="सुरक्षित एवं सत्यापित">Secure & Verified</span></span>
+        <span><i class="fas fa-file-invoice"></i> <span data-en="80G Tax Exempt" data-hi="80G कर छूट">80G Tax Exempt</span></span>
+        <span><i class="fas fa-landmark"></i> <span data-en="Registered NGO" data-hi="पंजीकृत एनजीओ">Registered NGO</span></span>
+        <span><i class="fas fa-check-circle"></i> <span data-en="Transparent Funds" data-hi="पारदर्शी फंड">Transparent Funds</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-title">
+      <span class="kicker" data-en="Moments of Impact" data-hi="प्रभाव के क्षण">Moments of Impact</span>
+      <h2 data-en="Photo Gallery" data-hi="फोटो गैलरी">Photo Gallery</h2>
+      <p data-en="Snapshots from our programs, camps, and community events." data-hi="हमारे कार्यक्रमों, शिविरों और सामुदायिक आयोजनों की झलकियाँ।">Snapshots from our programs, camps, and community events.</p>
+    </div>
+    <div class="gallery-tabs">
+      <button class="gtab active" data-cat="all" data-en="All" data-hi="सभी">All</button>
+      <button class="gtab" data-cat="education" data-en="Education" data-hi="शिक्षा">Education</button>
+      <button class="gtab" data-cat="health" data-en="Health" data-hi="स्वास्थ्य">Health</button>
+      <button class="gtab" data-cat="women" data-en="Women" data-hi="महिलाएं">Women</button>
+      <button class="gtab" data-cat="community" data-en="Community" data-hi="समुदाय">Community</button>
+      <button class="gtab" data-cat="events" data-en="Events" data-hi="आयोजन">Events</button>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gimg tall" data-cat="education"><img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=600&q=80" alt=""><div class="overlay">Education</div></div>
+      <div class="gimg" data-cat="health"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80" alt=""><div class="overlay">Health</div></div>
+      <div class="gimg" data-cat="women"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80" alt=""><div class="overlay">Women</div></div>
+      <div class="gimg" data-cat="community"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80" alt=""><div class="overlay">Community</div></div>
+      <div class="gimg" data-cat="events"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&q=80" alt=""><div class="overlay">Events</div></div>
+      <div class="gimg tall" data-cat="education"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80" alt=""><div class="overlay">Education</div></div>
+      <div class="gimg" data-cat="health"><img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&q=80" alt=""><div class="overlay">Health</div></div>
+      <div class="gimg" data-cat="community"><img src="https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=400&q=80" alt=""><div class="overlay">Community</div></div>
+      <div class="gimg" data-cat="women"><img src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=400&q=80" alt=""><div class="overlay">Women</div></div>
+      <div class="gimg" data-cat="events"><img src="https://images.unsplash.com/photo-1604881991720-f91add269bed?w=400&q=80" alt=""><div class="overlay">Events</div></div>
+      <div class="gimg" data-cat="education"><img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=400&q=80" alt=""><div class="overlay">Education</div></div>
+      <div class="gimg" data-cat="community"><img src="https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?w=400&q=80" alt=""><div class="overlay">Community</div></div>
+    </div>
+  </div>
+</section>
+<div class="lightbox" id="lightbox"><span class="lb-close" id="lbClose"><i class="fas fa-times"></i></span><img src="" id="lbImg" alt=""></div>
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-title">
+      <span class="kicker" data-en="Get In Touch" data-hi="संपर्क करें">Get In Touch</span>
+      <h2 data-en="Contact & Visit Us" data-hi="संपर्क एवं आगमन">Contact & Visit Us</h2>
+    </div>
+    <div class="contact-grid">
+      <div data-aos="fade-right">
+        <div class="contact-card">
+          <h3 data-en="Reach Out Directly" data-hi="सीधे संपर्क करें">Reach Out Directly</h3>
+          <ul class="contact-list">
+            <li><div class="ic"><i class="fas fa-map-marker-alt"></i></div><div><strong data-en="Address" data-hi="पता">Address</strong><p>WJ6X+F9, Bahosi, Uttar Pradesh 209723</p></div></li>
+            <li><div class="ic"><i class="fas fa-phone-alt"></i></div><div><strong data-en="Phone" data-hi="फोन">Phone</strong><p>+91-83848-45479</p></div></li>
+            <li><div class="ic"><i class="fas fa-envelope"></i></div><div><strong data-en="Email" data-hi="ईमेल">Email</strong><p><a href="mailto:saarthisanatanseva@gmail.com" >saarthisanatanseva@gmail.com</a></p></div></li>
+            <li><div class="ic"><i class="fas fa-clock"></i></div><div><strong data-en="Hours" data-hi="समय">Hours</strong><p data-en="Mon–Sat: 9:00 AM – 6:00 PM" data-hi="सोम–शनि: सुबह 9 – शाम 6">Mon–Sat: 9:00 AM – 6:00 PM</p></div></li>
+          </ul>
+        </div>
+        <div class="map-wrap"><iframe src="https://maps.google.com/maps?q=26.911180,79.648403&z=15&output=embed" loading="lazy"></iframe></div>
+      </div>
+      <form class="contact-form" data-aos="fade-left" id="contactForm" action="https://formsubmit.co/e27edf95d3e17a851ebbe20bfba43b67" method="POST">
+        <h3 data-en="Send Us a Message" data-hi="हमें संदेश भेजें">Send Us a Message</h3>
+        <input type="hidden" name="_subject" id="cfSubject" value="New message from Saarthi website">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="">
+        <input type="text" name="_honey" style="display:none">
+        <div class="cf-row">
+          <input type="text" name="Name" placeholder="Full Name" data-en-ph="Full Name" data-hi-ph="पूरा नाम" required>
+          <input type="email" name="Email" placeholder="Email" data-en-ph="Email" data-hi-ph="ईमेल" required>
+        </div>
+        <div class="cf-row">
+          <input type="tel" name="Phone" placeholder="Phone" data-en-ph="Phone" data-hi-ph="फोन">
+          <select name="Subject" id="cfSubjectSel">
+            <option value="" data-en="-- Subject --" data-hi="-- विषय --">-- Subject --</option>
+            <option value="General Inquiry" data-en="General Inquiry" data-hi="सामान्य पूछताछ">General Inquiry</option>
+            <option value="Volunteer" data-en="Volunteer" data-hi="स्वयंसेवक">Volunteer</option>
+            <option value="Donation" data-en="Donation" data-hi="दान">Donation</option>
+            <option value="Partnership" data-en="Partnership" data-hi="साझेदारी">Partnership</option>
+          </select>
+        </div>
+        <textarea name="Message" placeholder="Your Message" data-en-ph="Your Message" data-hi-ph="आपका संदेश" required></textarea>
+        <button type="submit" class="btn btn-primary" data-en="Send Message" data-hi="संदेश भेजें">Send Message <i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+</section>
+<section class="newsletter" style="padding:50px 0">
+  <div class="container">
+    <div class="news-row">
+      <div>
+        <h3 data-en="Stay updated with our impact stories and events" data-hi="हमारी गतिविधियों से जुड़े रहें">Stay updated with our impact stories and events</h3>
+        <p data-en="Get monthly newsletter with field reports, success stories, and upcoming events." data-hi="हर माह की रिपोर्ट, कहानियाँ और आगामी कार्यक्रम सीधे आपके इनबॉक्स में।">Get monthly newsletter with field reports, success stories, and upcoming events.</p>
+      </div>
+      <form class="news-form" id="newsForm">
+        <input type="email" placeholder="Your email" data-en-ph="Your email" data-hi-ph="आपका ईमेल" required>
+        <button type="submit" data-en="Subscribe" data-hi="सब्सक्राइब">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col foot-about">
+        <div class="logo">
+          <div class="logo-emblem">स</div>
+          <div class="logo-text"><span class="name" style="color:#fff" data-en="Saarthi Aadarsh Seva Sansthan" data-hi="सारथी आदर्श सेवा संस्थान">Saarthi Aadarsh Seva Sansthan</span></div>
+        </div>
+        <p data-en="A grassroots NGO based in Bahosi, Uttar Pradesh — committed to education, healthcare, and empowerment for India's rural underprivileged since 2015." data-hi="बहोसी, उत्तर प्रदेश पर आधारित एक ज़मीनी एनजीओ — 2015 से शिक्षा, स्वास्थ्य और सशक्तिकरण के लिए समर्पित।">A grassroots NGO based in Bahosi, Uttar Pradesh — committed to education, healthcare, and empowerment for India's rural underprivileged since 2015.</p>
+        <div class="foot-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com/@saarthi-sanatan-seva" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/@SAARTHIAADARSHSEVASANSTHAN" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4 data-en="Quick Links" data-hi="त्वरित लिंक">Quick Links</h4>
+        <ul>
+          <li><a href="#about" data-en="About Us" data-hi="हमारे बारे में">About Us</a></li>
+          <li><a href="#objectives" data-en="Our Work" data-hi="हमारा कार्य">Our Work</a></li>
+          <li><a href="#donate" data-en="Donate" data-hi="दान करें">Donate</a></li>
+          <li><a href="#contact" data-en="Volunteer" data-hi="स्वयंसेवक">Volunteer</a></li>
+          <li><a href="#contact" data-en="Contact Us" data-hi="संपर्क">Contact Us</a></li>
+          <li><a href="#" data-en="Annual Reports" data-hi="वार्षिक रिपोर्ट">Annual Reports</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4 data-en="Our Programs" data-hi="हमारे कार्यक्रम">Our Programs</h4>
+        <ul>
+          <li><a href="#projects">Bal Vidya Abhiyan</a></li>
+          <li><a href="#projects">Aarogya Setu Camps</a></li>
+          <li><a href="#projects">Shakti Women Hub</a></li>
+          <li><a href="#objectives" data-en="Child Welfare" data-hi="बाल कल्याण">Child Welfare</a></li>
+          <li><a href="#objectives" data-en="Community Development" data-hi="सामुदायिक विकास">Community Development</a></li>
+        </ul>
+      </div>
+      <div class="foot-col foot-contact">
+        <h4 data-en="Contact" data-hi="संपर्क">Contact</h4>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i><span>WJ6X+F9, Bahosi, U.P. 209723</span></li>
+          <li><i class="fas fa-phone-alt"></i><span>+91-83848-45479</span></li>
+          <li><i class="fas fa-envelope"></i><span><a href="mailto:saarthisanatanseva@gmail.com" class="__cf_email__">saarthisanatanseva@gmail.com</a></span></li>
+          <li><i class="fas fa-clock"></i><span data-en="Mon–Sat: 9 AM – 6 PM" data-hi="सोम-शनि: 9 AM – 6 PM">Mon–Sat: 9 AM – 6 PM</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2025 Saarthi Aadarsh Seva Sansthan. <span data-en="All rights reserved." data-hi="सर्वाधिकार सुरक्षित।">All rights reserved.</span></div>
+      <div class="dev"><span data-en="Website developed by" data-hi="वेबसाइट निर्माता">Website developed by</span> <a href="https://github.com/Devraj-Dwivedi" target="_blank">Devraj Dwivedi</a></div>
+      <div><a href="#" id="openPrivacy" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a> | <a href="#" id="openTerms" data-en="Terms & Conditions" data-hi="नियम एवं शर्तें">Terms & Conditions</a></div>
+    </div>
+  </div>
+</footer>
+<div class="modal" id="privacyModal">
+  <div class="modal-content">
+    <div class="modal-head"><h3 data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</h3><button class="modal-close" data-close><i class="fas fa-times"></i></button></div>
+    <div class="modal-body">
+      <h4>Introduction</h4>
+      <p>This Privacy Policy explains how Saarthi Aadarsh Seva Sansthan ("we", "our", "the Organization") collects, uses, and safeguards personal information provided through this website.</p>
+      <h4>Information Collected</h4>
+      <p>We collect your name, email, phone number, and donation amount when voluntarily provided via forms or the donation section. No payment processing happens on this site.</p>
+      <h4>Use of Information</h4>
+      <p>To respond to inquiries, send impact updates (with consent), and improve website experience. We do not sell, rent, or share personal data with third parties.</p>
+      <h4>Cookies</h4>
+      <p>We use minimal cookies for language and theme preference storage only (localStorage).</p>
+      <h4>Data Retention</h4>
+      <p>Contact form submissions are retained for 1 year; unsubscribe requests are honored within 7 days.</p>
+      <h4>Your Rights</h4>
+      <p>You have the right to access, correct, or request deletion of personal data by emailing <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="116270706365797862707f7065707f6274677051767c70787d3f727e7c">[email&#160;protected]</a>.</p>
+      <h4>Children</h4>
+      <p>We do not knowingly collect data from children under 13.</p>
+      <h4>Changes</h4>
+      <p>This policy may be updated as needed; continued use of the website constitutes acceptance.</p>
+      <h4>Contact</h4>
+      <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c8bba9a9babca0a1bba9a6a9bca9a6bbadbea988afa5a9a1a4e6aba7a5">[email&#160;protected]</a> | +91-83848-45479</p>
+    </div>
+    <div class="modal-actions"><button onclick="window.print()" data-en="Print" data-hi="प्रिंट">Print</button><button data-close data-en="Close" data-hi="बंद">Close</button></div>
+  </div>
+</div>
+<div class="modal" id="termsModal">
+  <div class="modal-content">
+    <div class="modal-head"><h3 data-en="Terms & Conditions" data-hi="नियम एवं शर्तें">Terms & Conditions</h3><button class="modal-close" data-close><i class="fas fa-times"></i></button></div>
+    <div class="modal-body">
+      <h4>Use of Website</h4>
+      <p>This website is for informational purposes only. Content may not be reproduced without written permission from the organization.</p>
+      <h4>Donations</h4>
+      <p>All donations are voluntary contributions. No refund policy except in cases of technical error — please email us within 48 hours.</p>
+      <h4>Accuracy</h4>
+      <p>We strive for accuracy in all content but do not warrant the completeness or timeliness of every detail published here.</p>
+      <h4>Third-party Links</h4>
+      <p>External links (social media, maps, payment apps) are governed by their own privacy policies and terms.</p>
+      <h4>Intellectual Property</h4>
+      <p>All content, logo, and branding belong to Saarthi Aadarsh Seva Sansthan.</p>
+      <h4>Limitation of Liability</h4>
+      <p>The organization is not liable for indirect, incidental, or consequential damages arising from website use.</p>
+      <h4>Governing Law</h4>
+      <p>These terms are governed by the laws of India and the jurisdiction of courts in Fatehpur, Uttar Pradesh.</p>
+      <h4>Contact</h4>
+      <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2a594b4b585e4243594b444b5e4b44594f5c4b6a4d474b434604494547">[email&#160;protected]</a></p>
+    </div>
+    <div class="modal-actions"><button onclick="window.print()" data-en="Print" data-hi="प्रिंट">Print</button><button data-close data-en="Close" data-hi="बंद">Close</button></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<button class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<!-- SETTINGS PANEL -->
+<div class="settings-backdrop" id="spBack"></div>
+<aside class="settings-panel" id="settings" aria-label="Settings">
+  <div class="sp-head">
+    <h3><i class="fas fa-sliders-h"></i> <span data-en="Settings" data-hi="सेटिंग्स">Settings</span></h3>
+    <button class="sp-close" id="spClose"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="sp-body">
+    <div class="sp-group">
+      <h4><i class="fas fa-language"></i> <span data-en="Language" data-hi="भाषा">Language</span></h4>
+      <div class="seg" id="segLang">
+        <button data-val="en"><i class="fas fa-globe"></i> English</button>
+        <button data-val="hi"><i class="fas fa-globe"></i> हिन्दी</button>
+      </div>
+    </div>
+
+    <div class="sp-group">
+      <h4><i class="fas fa-palette"></i> <span data-en="Display" data-hi="डिस्प्ले">Display</span></h4>
+      <div class="seg" id="segTheme">
+        <button data-val="light"><i class="fas fa-sun"></i> <span data-en="Bright" data-hi="उज्ज्वल">Bright</span></button>
+        <button data-val="dark"><i class="fas fa-moon"></i> <span data-en="Dark" data-hi="गहरा">Dark</span></button>
+      </div>
+    </div>
+
+    <div class="sp-group">
+      <h4><i class="fas fa-text-height"></i> <span data-en="Text Size" data-hi="पाठ आकार">Text Size</span></h4>
+      <div class="seg" id="segFont">
+        <button data-val="sm">A−</button>
+        <button data-val="md">A</button>
+        <button data-val="lg">A+</button>
+      </div>
+    </div>
+
+    <div class="sp-group">
+      <h4><i class="fas fa-universal-access"></i> <span data-en="Accessibility" data-hi="पहुँच">Accessibility</span></h4>
+      <div class="sp-switch">
+        <label><i class="fas fa-film"></i> <span data-en="Reduce animations" data-hi="एनिमेशन कम करें">Reduce animations</span></label>
+        <div class="toggle" id="tgMotion"></div>
+      </div>
+      <div class="sp-switch">
+        <label><i class="fas fa-adjust"></i> <span data-en="High contrast" data-hi="उच्च कंट्रास्ट">High contrast</span></label>
+        <div class="toggle" id="tgContrast"></div>
+      </div>
+    </div>
+  </div>
+  <div class="sp-foot">
+    <button class="sp-reset" id="spReset" data-en="Reset" data-hi="रीसेट">Reset</button>
+    <button class="sp-done" id="spDone" data-en="Done" data-hi="हो गया">Done</button>
+  </div>
+</aside>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.umd.min.js"></script>
+<script>
+/* ===== INIT ===== */
+AOS.init({duration:800,once:true,offset:80});
+
+/* Hero split-text animation */
+(function(){
+  const titles={en:"Every Life Deserves Dignity",hi:"हर जीवन सम्मान का अधिकारी है"};
+  function renderTitle(lang){
+    const t=document.getElementById('heroTitle');
+    t.innerHTML='';
+    const txt=titles[lang]||titles.en;
+    txt.split(' ').forEach((w,i)=>{
+      const s=document.createElement('span');
+      s.className='word';s.textContent=w+' ';
+      s.style.animationDelay=(i*120)+'ms';
+      t.appendChild(s);
+    });
+  }
+  window.__renderHero=renderTitle;
+})();
+
+/* ===== LANGUAGE TOGGLE ===== */
+function applyLang(lang){
+  document.querySelectorAll('[data-en],[data-hi]').forEach(el=>{
+    const t=el.getAttribute('data-'+lang);
+    if(t===null||t===undefined) return;
+    if(el.children.length===0){
+      el.style.opacity='0';
+      setTimeout(()=>{el.textContent=t;el.style.opacity='1';},80);
+    } else {
+      // preserve children (icons), replace text nodes
+      let replaced=false;
+      el.childNodes.forEach(n=>{
+        if(n.nodeType===3 && n.textContent.trim()){n.textContent=' '+t+' ';replaced=true;}
+      });
+      if(!replaced) el.appendChild(document.createTextNode(' '+t));
+    }
+  });
+  document.querySelectorAll('[data-en-ph]').forEach(el=>{
+    const t=el.getAttribute('data-'+lang+'-ph');
+    if(t) el.setAttribute('placeholder',t);
+  });
+  document.querySelectorAll('.lang-toggle button').forEach(b=>{
+    b.classList.toggle('active',b.dataset.lang===lang);
+  });
+  document.documentElement.setAttribute('lang',lang);
+  localStorage.setItem('lang',lang);
+  window.__renderHero && window.__renderHero(lang);
+}
+document.querySelectorAll('.lang-toggle button').forEach(b=>{
+  b.addEventListener('click',()=>applyLang(b.dataset.lang));
+});
+applyLang(localStorage.getItem('lang')||'en');
+
+/* ===== THEME TOGGLE ===== */
+function applyTheme(theme){
+  const isDark=theme==='dark';
+  document.documentElement.classList.toggle('dark-mode',isDark);
+  const icon=document.querySelector('#themeToggle i');
+  if(icon) icon.className=isDark?'fas fa-sun':'fas fa-moon';
+  localStorage.setItem('theme',theme);
+}
+document.getElementById('themeToggle').addEventListener('click',()=>{
+  applyTheme(document.documentElement.classList.contains('dark-mode')?'light':'dark');
+});
+applyTheme(localStorage.getItem('theme')||'light');
+
+/* ===== STICKY HEADER ===== */
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>{
+  header.classList.toggle('scrolled',window.scrollY>80);
+  document.getElementById('backTop').classList.toggle('show',window.scrollY>400);
+});
+
+/* ===== HAMBURGER ===== */
+document.getElementById('hamburger').addEventListener('click',()=>{
+  document.getElementById('mobileMenu').classList.add('open');
+  document.body.style.overflow='hidden';
+});
+document.getElementById('mmClose').addEventListener('click',()=>{
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.body.style.overflow='';
+});
+document.querySelectorAll('#mobileMenu a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.body.style.overflow='';
+  });
+});
+
+/* ===== BACK TO TOP ===== */
+document.getElementById('backTop').addEventListener('click',()=>{
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+/* ===== COUNTERS ===== */
+const counterObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting && !e.target.dataset.done){
+      e.target.dataset.done='1';
+      const val=parseInt(e.target.dataset.count);
+      const cu=new countUp.CountUp(e.target,val,{duration:2.5,suffix:'+'});
+      cu.start();
+    }
+  });
+},{threshold:.4});
+document.querySelectorAll('[data-count]').forEach(el=>counterObs.observe(el));
+
+/* ===== SWIPER ===== */
+new Swiper('.storySwiper',{
+  loop:true,
+  autoplay:{delay:5000,disableOnInteraction:false},
+  pagination:{el:'.swiper-pagination',clickable:true},
+  effect:'slide'
+});
+
+/* ===== DONATE PILLS ===== */
+let selectedAmt=1000;
+document.querySelectorAll('.amt-pill').forEach(p=>{
+  p.addEventListener('click',()=>{
+    document.querySelectorAll('.amt-pill').forEach(x=>x.classList.remove('active'));
+    p.classList.add('active');
+    if(p.dataset.amt==='custom'){
+      document.getElementById('customAmtBox').style.display='block';
+      const v=parseInt(document.getElementById('customAmt').value);
+      selectedAmt=isNaN(v)||v<100?1000:v;
+    }else{
+      document.getElementById('customAmtBox').style.display='none';
+      selectedAmt=parseInt(p.dataset.amt);
+    }
+  });
+});
+document.getElementById('customAmt').addEventListener('input',e=>{
+  const v=parseInt(e.target.value);if(!isNaN(v)&&v>=100)selectedAmt=v;
+});
+document.getElementById('proceedDonate').addEventListener('click',()=>{
+  const name=document.getElementById('donorName').value.trim();
+  const q=new URLSearchParams();q.set('amount',selectedAmt);
+  if(name) q.set('name',name);
+  window.location.href='donate.html?'+q.toString();
+});
+
+/* ===== CONTACT / NEWSLETTER ===== */
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3200);
+}
+document.getElementById('contactForm').addEventListener('submit',e=>{
+  // Let the form POST to FormSubmit — email lands directly in inbox
+  const sel=document.getElementById('cfSubjectSel');
+  const subj=document.getElementById('cfSubject');
+  if(sel && subj) subj.value='Saarthi Website Enquiry — '+(sel.value||'General');
+  toast((localStorage.getItem('lang')||'en')==='hi'?'भेजा जा रहा है…':'Sending…');
+});
+document.getElementById('newsForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  toast((localStorage.getItem('lang')||'en')==='hi'?'सब्सक्राइब करने के लिए धन्यवाद!':'Thank you for subscribing!');
+  e.target.reset();
+});
+
+/* ===== MODALS ===== */
+function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(el){el.classList.remove('open');document.body.style.overflow=''}
+document.getElementById('openPrivacy').addEventListener('click',e=>{e.preventDefault();openModal('privacyModal')});
+document.getElementById('openTerms').addEventListener('click',e=>{e.preventDefault();openModal('termsModal')});
+document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',e=>closeModal(e.target.closest('.modal'))));
+document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModal(m)}));
+
+/* ===== GALLERY TABS + LIGHTBOX ===== */
+document.querySelectorAll('.gtab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.gtab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    const c=t.dataset.cat;
+    document.querySelectorAll('.gimg').forEach(g=>{
+      g.style.display=(c==='all'||g.dataset.cat===c)?'':'none';
+    });
+  });
+});
+document.querySelectorAll('.gimg').forEach(g=>{
+  g.addEventListener('click',()=>{
+    document.getElementById('lbImg').src=g.querySelector('img').src.replace('w=400','w=1400').replace('w=600','w=1400');
+    document.getElementById('lightbox').classList.add('open');
+  });
+});
+document.getElementById('lbClose').addEventListener('click',()=>document.getElementById('lightbox').classList.remove('open'));
+document.getElementById('lightbox').addEventListener('click',e=>{if(e.target.id==='lightbox')e.target.classList.remove('open')});
+
+/* ===== SETTINGS PANEL ===== */
+const sp=document.getElementById('settings');
+const spBack=document.getElementById('spBack');
+function openSettings(){sp.classList.add('open');spBack.classList.add('open');syncSettings()}
+function closeSettings(){sp.classList.remove('open');spBack.classList.remove('open')}
+document.getElementById('settingsToggle').addEventListener('click',openSettings);
+document.getElementById('spClose').addEventListener('click',closeSettings);
+document.getElementById('spDone').addEventListener('click',closeSettings);
+spBack.addEventListener('click',closeSettings);
+
+function setSeg(id,val){
+  document.querySelectorAll('#'+id+' button').forEach(b=>b.classList.toggle('active',b.dataset.val===val));
+}
+function applyFont(size){
+  document.documentElement.classList.remove('font-sm','font-md','font-lg');
+  document.documentElement.classList.add('font-'+size);
+  localStorage.setItem('fontSize',size);
+}
+function applyMotion(off){
+  document.documentElement.classList.toggle('no-motion',off);
+  localStorage.setItem('reduceMotion',off?'1':'0');
+}
+function applyContrast(on){
+  document.documentElement.classList.toggle('high-contrast',on);
+  localStorage.setItem('highContrast',on?'1':'0');
+}
+function syncSettings(){
+  setSeg('segLang',localStorage.getItem('lang')||'en');
+  setSeg('segTheme',localStorage.getItem('theme')||'light');
+  setSeg('segFont',localStorage.getItem('fontSize')||'md');
+  document.getElementById('tgMotion').classList.toggle('on',localStorage.getItem('reduceMotion')==='1');
+  document.getElementById('tgContrast').classList.toggle('on',localStorage.getItem('highContrast')==='1');
+}
+document.querySelectorAll('#segLang button').forEach(b=>b.addEventListener('click',()=>{applyLang(b.dataset.val);setSeg('segLang',b.dataset.val)}));
+document.querySelectorAll('#segTheme button').forEach(b=>b.addEventListener('click',()=>{applyTheme(b.dataset.val);setSeg('segTheme',b.dataset.val)}));
+document.querySelectorAll('#segFont button').forEach(b=>b.addEventListener('click',()=>{applyFont(b.dataset.val);setSeg('segFont',b.dataset.val)}));
+document.getElementById('tgMotion').addEventListener('click',e=>{const on=!e.currentTarget.classList.contains('on');e.currentTarget.classList.toggle('on',on);applyMotion(on)});
+document.getElementById('tgContrast').addEventListener('click',e=>{const on=!e.currentTarget.classList.contains('on');e.currentTarget.classList.toggle('on',on);applyContrast(on)});
+document.getElementById('spReset').addEventListener('click',()=>{
+  applyLang('en');applyTheme('light');applyFont('md');applyMotion(false);applyContrast(false);
+  syncSettings();
+  toast('Settings reset');
+});
+
+/* Initialize persisted settings on load */
+applyFont(localStorage.getItem('fontSize')||'md');
+if(localStorage.getItem('reduceMotion')==='1') applyMotion(true);
+if(localStorage.getItem('highContrast')==='1') applyContrast(true);
+
+/* Open settings via hash #settings */
+if(location.hash==='#settings') setTimeout(openSettings,200);
+window.addEventListener('hashchange',()=>{if(location.hash==='#settings') openSettings()});
+</script>
+</body>
+</html>
